@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.umuc.controllers.ManageWeightsController">
+   <children>
+      <GridPane layoutY="160.0" prefHeight="440.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="160.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="240.0" minWidth="240.0" prefWidth="240.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="25.0" minWidth="25.0" prefWidth="25.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="30.0" prefWidth="88.0" text="Win-Loss" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="winLossWeight" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label prefHeight="30.0" prefWidth="210" text="Average Opponents Wins" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="oppWinsWeight" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label prefHeight="30.0" prefWidth="210.0" text="Average Point Difference" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Times New Roman" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="avgPtsDiffWeight" prefHeight="31.0" prefWidth="190.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label prefHeight="48.0" prefWidth="67.0" text="Type" GridPane.columnIndex="1">
+               <font>
+                  <Font name="Times New Roman" size="29.0" />
+               </font>
+            </Label>
+            <Label prefHeight="48.0" prefWidth="91.0" text="Weight" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="Times New Roman" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnResetWeights" mnemonicParsing="false" onAction="#handleResetWeights" prefHeight="42.0" prefWidth="191.0" text="Reset Weights" textFill="#29288d" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button fx:id="btnSaveWeights" mnemonicParsing="false" onAction="#handleSaveWeights" prefHeight="42.0" prefWidth="191.0" text="Save Weights" textFill="#29288d" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <AnchorPane prefHeight="110.0" prefWidth="1100.0" style="-fx-background-color: #23a353;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="353.0" layoutY="20.0" prefHeight="70.0" prefWidth="395.0" text="Manage Weights" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Times New Roman" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="107.0" prefHeight="48.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="78.0" layoutY="11.0" text="&gt;" AnchorPane.leftAnchor="75.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSchoolsRanking" layoutX="99.0" layoutY="10.0" mnemonicParsing="false" onAction="#processButtonClickEvents" text="Schools Ranking" AnchorPane.leftAnchor="92.0" />
+            <Button fx:id="btnHome" layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#processButtonClickEvents" text="Home" AnchorPane.leftAnchor="10.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,295 @@
+﻿name: Maryland
+leagueId: maryland
+weight: 1.0
+schools:
+- name: Annapolis Area Christian School
+- name: Annapolis High School
+- name: Annapolis/Old Mill
+- name: Antioch Christian School
+- name: Arundel High School
+- name: Atholton High School
+- name: Avalon School
+- name: Barrie School
+- name: Bethesda-Chevy Chase High School
+- name: Bladensburg High School
+- name: Blair High School
+- name: Blake High School
+- name: Bowie High School
+- name: Broadneck High School
+- name: Bullis School
+- name: C.H. Flowers High School
+- name: Calvert High School
+- name: Calverton School
+- name: Capitol Christian Academy
+- name: Centennial High School
+- name: Central High School
+- name: Chapelgate Christian Academy
+- name: Chesapeake High School
+- name: Chesapeake Math and IT-North
+- name: Chesapeake Math and IT-South
+- name: Chopticon High School
+- name: Churchill High School
+- name: Clarksburg High School
+- name: College Park Academy
+- name: Covenant Life School
+- name: Crossland High School
+- name: Damascus High School
+- name: DeMatha High School
+- name: Don Bosco High School
+- name: Douglass High School
+- name: DuVal High School
+- name: Einstein High School
+- name: Eleanor Roosevelt High School
+- name: Elizabeth Seton High School
+- name: Fairmont Heights High School
+- name: Forestville High School
+- name: Friendly High School
+- name: Gaithersburg High School
+- name: Georgetown Prep School
+- name: Glen Burnie High School
+- name: Glenelg Country School
+- name: Glenelg High School
+- name: Good Counsel High School
+- name: Grace Brethren
+- name: Grace Christian Academy of Maryland
+- name: Great Mills High School
+- name: Gwynn Park High School
+- name: Hammond High School
+- name: Hebrew Academy
+- name: High Point High School
+- name: Holton-Arms School
+- name: Holy Child School
+- name: Holy Cross Academy
+- name: Howard High School
+- name: Huntingtown High School
+- name: Indian Creek School
+- name: International High School
+- name: Jewish Day School
+- name: Kennedy High School
+- name: Key School
+- name: King's Christian Academy
+- name: La Plata High School
+- name: Lackey High School
+- name: Landon School
+- name: Lanham Christian School
+- name: Largo High School
+- name: Laurel High School
+- name: Leonardtown High School
+- name: Long Reach High School
+- name: Magruder High School
+- name: Marriotts Ridge High School
+- name: McDonough High School
+- name: McLean School
+- name: McNamara High School
+- name: Meade High School
+- name: Montrose Christian School
+- name: Mount Hebron High School
+- name: National Christian Academy
+- name: New Hope International High School
+- name: North County High School
+- name: North Point High School
+- name: Northeast High School
+- name: Northern High School
+- name: Northwest High School
+- name: Northwest/Poolesville/Quince Orchard/Seneca Valley
+- name: Northwestern High School
+- name: Northwood High School
+- name: Oakland Mills High School
+- name: Old Mill High School
+- name: Oxon Hill High School
+- name: Paint Branch High School
+- name: Pallotti High School
+- name: Parkdale High School
+- name: Patuxent High School
+- name: Poolesville High School
+- name: Potomac (Md.) High School
+- name: Progressive Christian Academy
+- name: Quince Orchard High School
+- name: Reservoir High School
+- name: Richard Montgomery High School
+- name: River Hill High School
+- name: Riverdale Baptist School
+- name: Rock Creek Christian Academy
+- name: Rockbridge Academy
+- name: Rockville High School
+- name: Sandy Spring Friends School
+- name: Seneca Valley High School
+- name: Severn School
+- name: Severna Park High School
+- name: Sherwood High School
+- name: South River High School
+- name: Southern High School
+- name: Southern Maryland Christian Academy
+- name: Spalding High School
+- name: Spencerville Adventist Academy
+- name: Springbrook High School
+- name: St. Andrew's School
+- name: St. Charles High School
+- name: St. Mary's Ryken High School
+- name: St. Mary's-Annapolis High School
+- name: Stone Ridge School
+- name: Suitland High School
+- name: Surrattsville High School
+- name: Takoma Academy
+- name: Tall Oaks
+- name: The Heights School
+- name: Thomas Stone High School
+- name: Walter Johnson High School
+- name: Washington Christian Academy
+- name: Washington Waldorf School
+- name: Watkins Mill High School
+- name: Westlake High School
+- name: Wheaton High School
+- name: Whitman High School
+- name: Wilde Lake High School
+- name: Wise High School
+- name: Wootton High School
+- name: Yeshiva High School
+---
+name: Virginia
+leagueId: virginia
+weight: 1.0
+schools:
+- name: Ad Fontes Academy
+- name: Annandale High School
+- name: Battlefield High School
+- name: Bishop Ireton High School
+- name: Brentsville District High School
+- name: Briar Woods High School
+- name: Broad Run High School
+- name: Centreville High School
+- name: Champe High School
+- name: Chantilly High School
+- name: Christ Chapel Academy
+- name: Colgan
+- name: County Christian School
+- name: Dominion High School
+- name: Edison High School
+- name: Emmanuel Christian School
+- name: Episcopal High School
+- name: Evangel Christian School
+- name: Fairfax Baptist Temple
+- name: Fairfax Christian School
+- name: Fairfax High School
+- name: Fairfax Homeschool
+- name: Falls Church High School
+- name: Flint Hill School
+- name: Forest Park High School
+- name: Foxcroft School
+- name: Freedom-South Riding High School
+- name: Freedom-Woodbridge
+- name: Gar-Field High School
+- name: George Mason High School
+- name: Hayfield Secondary School
+- name: Hearts Homeschool
+- name: Heritage Christian (Va.)
+- name: Heritage High School
+- name: Herndon High School
+- name: Hylton High School
+- name: Impact Academy
+- name: Islamic Saudi Academy
+- name: James Madison High School
+- name: Jefferson High School
+- name: John Paul the Great
+- name: King Abdullah Academy
+- name: Lake Braddock High School
+- name: Langley High School
+- name: Lee High School
+- name: Leesburg Christian
+- name: Loudoun County High School
+- name: Loudoun Valley High School
+- name: Madeira School
+- name: Manassas Park High School
+- name: Marshall High School
+- name: McLean High School
+- name: Middleburg Academy
+- name: Mount Vernon High School
+- name: Oakcrest School
+- name: Oakton High School
+- name: O'Connell High School
+- name: Osbourn High School
+- name: Osbourn Park High School
+- name: Park View High School
+- name: Patriot High School
+- name: Paul VI Catholic High School
+- name: Potomac (Va.) High School
+- name: Potomac Falls High School
+- name: Potomac School
+- name: Quantico High School
+- name: Riverside High School
+- name: Robinson Secondary School
+- name: Rock Ridge High School
+- name: Seton School
+- name: South County High School
+- name: South Lakes High School
+- name: St. Stephen's/St. Agnes School
+- name: State Line Homeschool Rush
+- name: Stone Bridge High School
+- name: Stonewall Jackson High School
+- name: T.C. Williams High School
+- name: Trinity at Meadow View
+- name: Trinity Christian
+- name: Tuscarora High School
+- name: Virginia Academy
+- name: W.T. Woodson High School
+- name: Wakefield High School
+- name: Washington-Lee High School
+- name: West Potomac High School
+- name: West Springfield High School
+- name: Westfield High School
+- name: Woodbridge High School
+- name: Woodgrove High School
+- name: Word of Life Christian Academy
+- name: Yorktown High School
+---
+name: Washington DC
+leagueId: washingtondc
+weight: 1.0
+schools:
+- name: Anacostia High School
+- name: Ballou High School
+- name: Banneker High School
+- name: Bell Multicultural High School
+- name: Booker T. Washington
+- name: Cardozo High School
+- name: Carroll High School
+- name: Cesar Chavez
+- name: César Chávez Public Charter School
+- name: Coolidge High School
+- name: Dunbar High School
+- name: Eastern High School
+- name: Edmund Burke School
+- name: Field School
+- name: Friendship Collegiate Academy
+- name: Georgetown Day School
+- name: Georgetown Visitation High School
+- name: Gonzaga College High School
+- name: H.D. Woodson High School
+- name: Hospitality Public Charter School
+- name: IDEA Charter (Integrated Design &amp; Electronics Academy)
+- name: Ideal Academy Charter School
+- name: Kingsman Academy
+- name: KIPP DC College Prep
+- name: Lab School
+- name: Maret School
+- name: Maya Angelou
+- name: McKinley Technical High School
+- name: Model Secondary School for the Deaf
+- name: National Cathedral School
+- name: Paul Public Charter
+- name: Perry Street Prep
+- name: Phelps Engineering High School
+- name: Richard Wright Public Charter
+- name: Ron Brown College Preparatory High School
+- name: Saint Anselm's Abbey School
+- name: School Without Walls
+- name: SEED School
+- name: Sidwell Friends School
+- name: St. Albans School
+- name: St. John's College High School
+- name: Theodore Roosevelt High School
+- name: Thurgood Marshall Academy
+- name: Washington International School
+- name: Washington Latin
+- name: Washington Math and Science
+- name: Wilson High School

@@ -1,0 +1,107 @@
+name: Football
+season: fall
+path: football
+---
+name: Field Hockey
+season: fall
+path: field-hockey
+---
+name: Volleyball
+season: fall
+path: volleyball
+---
+name: Boys' Fall Soccer
+season: fall
+path: boys-fall-soccer
+---
+name: Girls' Fall Soccer
+season: fall
+path: girls-fall-soccer
+---
+name: Boys' Cross Country
+season: fall
+path: boys-cross-country
+---
+name: Girls' Cross Country
+season: fall
+path: girls-cross-country
+---
+name: Fall Golf
+season: fall
+path: fall-golf
+---
+name: Girls' Fall Tennis
+season: fall
+path: girls-fall-tennis
+---
+name: Boys' Basketball
+season: winter
+path: boys-basketball
+---
+name: Girls' Basketball
+season: winter
+path: girls-basketball
+---
+name: Wrestling
+season: winter
+path: wrestling
+---
+name: Ice Hockey
+season: winter
+path: ice-hockey
+---
+name: Boys' Indoor Track and Field
+season: winter
+path: boys-indoor-track-and-field
+---
+name: Girls' Indoor Track and Field
+season: winter
+path: girls-indoor-track-and-field
+---
+name: Gymnastics - Winter
+season: winter
+path: gymnastics
+---
+name: Baseball
+season: spring
+path: baseball
+---
+name: Softball
+season: spring
+path: softball
+---
+name: Boys' Lacrosse
+season: spring
+path: boys-lacrosse
+---
+name: Girls' Lacrosse
+season: spring
+path: girls-lacrosse
+---
+name: Boys' Spring Soccer
+season: spring
+path: boys-spring-soccer
+---
+name: Girls' Spring Soccer
+season: spring
+path: girls-spring-soccer
+---
+name: Boys' Track and Field
+season: spring
+path: boys-track-and-field
+---
+name: Girls' Track and Field
+season: spring
+path: girls-track-and-field
+---
+name: Boys' Rowing
+season: spring
+path: boys-rowing
+---
+name: Girls' Rowing
+season: spring
+path: girls-rowing
+---
+name: Gymnastics - Spring
+season: spring
+path: gymnastics

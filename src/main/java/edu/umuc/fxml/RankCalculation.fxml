@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.umuc.controllers.RankCalculationController">
+   <children>
+      <AnchorPane prefHeight="110.0" prefWidth="1100.0" style="-fx-background-color: #23a353;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="371.0" layoutY="20.0" prefHeight="70.0" prefWidth="360.0" text="Rank Calculation" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
+               <font>
+                  <Font name="Times New Roman" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="110.0" prefHeight="48.0" prefWidth="1100.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0">
+         <children>
+            <Button fx:id="btnHome" layoutX="46.0" layoutY="9.0" mnemonicParsing="false" onAction="#processButtonClickEvents" text="Home" AnchorPane.leftAnchor="10.0" />
+            <Label layoutX="85.0" layoutY="10.0" text="&gt;" AnchorPane.leftAnchor="75.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnSchoolsRanking" layoutX="261.0" layoutY="9.0" mnemonicParsing="false" onAction="#processButtonClickEvents" text="Schools Ranking" AnchorPane.leftAnchor="92.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="156.0" prefHeight="419.0" prefWidth="1100.0" AnchorPane.bottomAnchor="442.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="150.0">
+         <children>
+            <Label fx:id="lblSchoolName" layoutX="10.0" layoutY="14.0" prefHeight="28.0" prefWidth="590.0" text="&lt;School Name Here&gt; results" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbSchoolResults" layoutX="10.0" layoutY="52.0" prefHeight="80.0" prefWidth="1080.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <columns>
+                  <TableColumn fx:id="wins" prefWidth="51.0" text="Wins" />
+                  <TableColumn fx:id="losses" prefWidth="59.0" text="Losses" />
+                  <TableColumn fx:id="leagueName" minWidth="0.0" prefWidth="164.0" text="League Name" />
+                  <TableColumn fx:id="leagueFactor" minWidth="0.0" prefWidth="112.0" text="League Factor" />
+                  <TableColumn fx:id="weightWinLoss" prefWidth="133.0" text="Weight&#10;Win-Loss" />
+                  <TableColumn fx:id="weightOppPoints" prefWidth="149.0" text="Weight&#10;Opponent Points" />
+                  <TableColumn fx:id="weightAvgPointsScored" prefWidth="129.0" text="Weight Average &#10;Points Scored" />
+                  <TableColumn fx:id="oppWins" minWidth="0.0" prefWidth="124.0" text=" Average Opponents&#10;Wins" />
+                  <TableColumn fx:id="avgPointDifferential" prefWidth="150.0" text="Average Point &#10;Differential" />
+               </columns>
+            </TableView>
+            <Label layoutX="10.0" layoutY="141.0" prefHeight="28.0" prefWidth="100.0" text="Calculation" AnchorPane.leftAnchor="10.0">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tbCalculation" layoutX="10.0" layoutY="175.0" prefHeight="70.0" prefWidth="1080.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <columns>
+                  <TableColumn fx:id="pointsForWin" prefWidth="141.0" text="Points for Win " />
+                  <TableColumn fx:id="pointsForLosses" minWidth="0.0" prefWidth="169.0" text="Points for Losses" />
+                  <TableColumn fx:id="sumOfPoints" minWidth="8.0" prefWidth="138.0" text="Sum of Points" />
+                  <TableColumn fx:id="pointsFromOppWins" minWidth="0.0" prefWidth="223.0" text="Points from Opponents Wins" />
+                  <TableColumn fx:id="pointsFromAvgOppDiff" minWidth="0.0" prefWidth="270.0" text="Points from Avg. Point Differential" />
+                  <TableColumn fx:id="totalPoints" minWidth="0.0" prefWidth="130.0" text="Total Points" />
+               </columns>
+            </TableView>
+            <Label fx:id="textArea" layoutX="10.0" layoutY="287.0" prefHeight="155.0" prefWidth="1080.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="287.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="14.0" layoutY="404.0" prefHeight="28.0" prefWidth="100.0" text="Explanation" AnchorPane.leftAnchor="14.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

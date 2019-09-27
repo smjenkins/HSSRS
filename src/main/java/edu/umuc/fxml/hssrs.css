@@ -1,0 +1,40 @@
+/*
+Name: 
+Author: Robert H. Liberman
+Date: 
+University of Maryland University College
+SWEN
+*/
+/* 
+    Created on : Jun 20, 2019, 5:10:25 PM
+    Author     : Robert Liberman <rhliberman@>yahoo.com>
+*/
+
+#topHeader {
+    -fx-background-color: #23a353;
+}
+
+#hssrsTitle1 {
+    -fx-font-family:Georgia;
+    -fx-font-size: 34px;
+}
+
+#hssrsTitle2 {
+    -fx-font-family:Verdana;
+    -fx-font-size: 14px;
+    -fx-font-style:oblique;
+    -fx-color:#ffffff;
+}
+
+#txtAbout {
+    -fx-font-family:Calibri;
+    -fx-font-size: 16px;
+    -fx-border-color: #ffffff;
+    -fx-background-color: transparent;
+}
+
+#menuBar {
+    
+   -fx-min-width:100%;
+   -fx-max-width:2200px;
+}

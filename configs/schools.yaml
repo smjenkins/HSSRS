@@ -1,0 +1,842 @@
+name: Anacostia High School
+path: anacostia
+---
+name: Ballou High School
+path: ballou
+---
+name: Banneker High School
+path: banneker
+---
+name: Bell Multicultural High School
+path: bell
+---
+name: Booker T. Washington
+path: booker-t-washington
+---
+name: Cardozo High School
+path: cardozo
+---
+name: Carroll High School
+path: carroll
+---
+name: Cesar Chavez
+path: cesar-chavez
+---
+name: César Chávez Public Charter School
+path: chavez-dc
+---
+name: Coolidge High School
+path: coolidge
+---
+name: Dunbar High School
+path: dunbar
+---
+name: Eastern High School
+path: eastern
+---
+name: Edmund Burke School
+path: edmund-burke
+---
+name: Field School
+path: field
+---
+name: Friendship Collegiate Academy
+path: friendship-collegiate
+---
+name: Georgetown Day School
+path: georgetown-day
+---
+name: Georgetown Visitation High School
+path: georgetown-visitation
+---
+name: Gonzaga College High School
+path: gonzaga
+---
+name: H.D. Woodson High School
+path: hd-woodson
+---
+name: Hospitality Public Charter School
+path: hospitality
+---
+name: IDEA Charter (Integrated Design &amp; Electronics Academy)
+path: idea
+---
+name: Ideal Academy Charter School
+path: ideal
+---
+name: Kingsman Academy
+path: kingsman-academy
+---
+name: KIPP DC College Prep
+path: kipp
+---
+name: Lab School
+path: lab-school
+---
+name: Maret School
+path: maret
+---
+name: Maya Angelou
+path: maya-angelou
+---
+name: McKinley Technical High School
+path: mckinley
+---
+name: Model Secondary School for the Deaf
+path: model
+---
+name: National Cathedral School
+path: national-cathedral
+---
+name: Paul Public Charter
+path: paul-public-charter
+---
+name: Perry Street Prep
+path: perry-street-prep
+---
+name: Phelps Engineering High School
+path: phelps
+---
+name: Richard Wright Public Charter
+path: richard-wright-dc
+---
+name: Ron Brown College Preparatory High School
+path: rom-brown
+---
+name: Saint Anselm's Abbey School
+path: saint-anselms
+---
+name: School Without Walls
+path: school-without-walls
+---
+name: SEED School
+path: seed
+---
+name: Sidwell Friends School
+path: sidwell-friends
+---
+name: St. Albans School
+path: st-albans
+---
+name: St. John's College High School
+path: st-johns
+---
+name: Theodore Roosevelt High School
+path: theodore-roosevelt
+---
+name: Thurgood Marshall Academy
+path: thurgood-marshall
+---
+name: Washington International School
+path: washington-international
+---
+name: Washington Latin
+path: washington-latin
+---
+name: Washington Math and Science
+path: washington-math-science
+---
+name: Wilson High School
+path: wilson
+---
+name: Annapolis Area Christian School
+path: annapolis-area-christian
+---
+name: Annapolis High School
+path: annapolis
+---
+name: Annapolis/Old Mill
+path: annapolis-old-mill
+---
+name: Antioch Christian School
+path: antioch
+---
+name: Arundel High School
+path: arundel
+---
+name: Broadneck High School
+path: broadneck
+---
+name: Chesapeake High School
+path: chesapeake
+---
+name: Glen Burnie High School
+path: glen-burnie
+---
+name: Indian Creek School
+path: indian-creek
+---
+name: Key School
+path: key
+---
+name: Meade High School
+path: meade
+---
+name: North County High School
+path: north-county
+---
+name: Northeast High School
+path: northeast
+---
+name: Old Mill High School
+path: old-mill
+---
+name: Rockbridge Academy
+path: rockbridge
+---
+name: Severn School
+path: severn-school
+---
+name: Severna Park High School
+path: severna-park
+---
+name: South River High School
+path: south-river
+---
+name: Southern High School
+path: southern
+---
+name: Spalding High School
+path: spalding
+---
+name: St. Mary's-Annapolis High School
+path: st-marys-annapolis
+---
+name: Calvert High School
+path: calvert
+---
+name: Calverton School
+path: calverton
+---
+name: Huntingtown High School
+path: huntingtown
+---
+name: Northern High School
+path: northern
+---
+name: Patuxent High School
+path: patuxent
+---
+name: Grace Christian Academy of Maryland
+path: grace-christian-academy
+---
+name: La Plata High School
+path: la-plata
+---
+name: Lackey High School
+path: lackey
+---
+name: McDonough High School
+path: mcdonough
+---
+name: North Point High School
+path: north-point
+---
+name: Southern Maryland Christian Academy
+path: southern-maryland-christian
+---
+name: St. Charles High School
+path: st-charles
+---
+name: Thomas Stone High School
+path: thomas-stone
+---
+name: Westlake High School
+path: westlake
+---
+name: Atholton High School
+path: atholton
+---
+name: Centennial High School
+path: centennial
+---
+name: Chapelgate Christian Academy
+path: chapelgate-christian
+---
+name: Glenelg Country School
+path: glenelg-country
+---
+name: Glenelg High School
+path: glenelg
+---
+name: Hammond High School
+path: hammond
+---
+name: Howard High School
+path: howard
+---
+name: Long Reach High School
+path: long-reach
+---
+name: Marriotts Ridge High School
+path: marriotts-ridge
+---
+name: Mount Hebron High School
+path: mount-hebron
+---
+name: Oakland Mills High School
+path: oakland-mills
+---
+name: Reservoir High School
+path: reservoir
+---
+name: River Hill High School
+path: river-hill
+---
+name: Wilde Lake High School
+path: wilde-lake
+---
+name: Avalon School
+path: avalon
+---
+name: Barrie School
+path: barrie
+---
+name: Bethesda-Chevy Chase High School
+path: bethesda-chevy-chase
+---
+name: Blair High School
+path: blair
+---
+name: Blake High School
+path: blake
+---
+name: Bullis School
+path: bullis
+---
+name: Churchill High School
+path: churchill
+---
+name: Clarksburg High School
+path: clarksburg
+---
+name: Covenant Life School
+path: covenant-life
+---
+name: Damascus High School
+path: damascus
+---
+name: Don Bosco High School
+path: don-bosco
+---
+name: Einstein High School
+path: einstein
+---
+name: Gaithersburg High School
+path: gaithersburg
+---
+name: Georgetown Prep School
+path: georgetown-prep
+---
+name: Good Counsel High School
+path: good-counsel
+---
+name: Hebrew Academy
+path: hebrew-academy
+---
+name: Holton-Arms School
+path: holton-arms
+---
+name: Holy Child School
+path: holy-child
+---
+name: Holy Cross Academy
+path: holy-cross
+---
+name: Jewish Day School
+path: jewish-day
+---
+name: Kennedy High School
+path: kennedy
+---
+name: Landon School
+path: landon
+---
+name: Magruder High School
+path: magruder
+---
+name: McLean School
+path: mclean-school
+---
+name: Montrose Christian School
+path: montrose-christian
+---
+name: Northwest High School
+path: northwest
+---
+name: Northwest/Poolesville/Quince Orchard/Seneca Valley
+path: npqs
+---
+name: Northwood High School
+path: northwood
+---
+name: Paint Branch High School
+path: paint-branch
+---
+name: Poolesville High School
+path: poolesville
+---
+name: Quince Orchard High School
+path: quince-orchard
+---
+name: Richard Montgomery High School
+path: richard-montgomery
+---
+name: Rockville High School
+path: rockville
+---
+name: Sandy Spring Friends School
+path: sandy-spring
+---
+name: Seneca Valley High School
+path: seneca-valley
+---
+name: Sherwood High School
+path: sherwood
+---
+name: Spencerville Adventist Academy
+path: spencerville-adventist
+---
+name: Springbrook High School
+path: springbrook
+---
+name: St. Andrew's School
+path: st-andrews
+---
+name: Stone Ridge School
+path: stone-ridge
+---
+name: Takoma Academy
+path: takoma-academy
+---
+name: The Heights School
+path: the-heights
+---
+name: Walter Johnson High School
+path: walter-johnson
+---
+name: Washington Christian Academy
+path: washington-christian
+---
+name: Washington Waldorf School
+path: washington-waldorf
+---
+name: Watkins Mill High School
+path: watkins-mill
+---
+name: Wheaton High School
+path: wheaton
+---
+name: Whitman High School
+path: whitman
+---
+name: Wootton High School
+path: wootton
+---
+name: Yeshiva High School
+path: yeshiva-high
+---
+name: Bladensburg High School
+path: bladensburg
+---
+name: Bowie High School
+path: bowie
+---
+name: C.H. Flowers High School
+path: ch-flowers
+---
+name: Capitol Christian Academy
+path: capitol-christian
+---
+name: Central High School
+path: central
+---
+name: Chesapeake Math and IT-North
+path: chesapeake-math-and-it
+---
+name: Chesapeake Math and IT-South
+path: cmit-south
+---
+name: College Park Academy
+path: college-park-academy
+---
+name: Crossland High School
+path: crossland
+---
+name: DeMatha High School
+path: dematha
+---
+name: Douglass High School
+path: douglass
+---
+name: DuVal High School
+path: duval
+---
+name: Eleanor Roosevelt High School
+path: eleanor-roosevelt
+---
+name: Elizabeth Seton High School
+path: elizabeth-seton
+---
+name: Fairmont Heights High School
+path: fairmont-heights
+---
+name: Forestville High School
+path: forestville
+---
+name: Friendly High School
+path: friendly
+---
+name: Grace Brethren
+path: grace-brethren
+---
+name: Gwynn Park High School
+path: gwynn-park
+---
+name: High Point High School
+path: high-point
+---
+name: International High School
+path: international-largo
+---
+name: Lanham Christian School
+path: lanham-christian
+---
+name: Largo High School
+path: largo
+---
+name: Laurel High School
+path: laurel
+---
+name: McNamara High School
+path: mcnamara
+---
+name: National Christian Academy
+path: national-christian
+---
+name: New Hope International High School
+path: new-hope
+---
+name: Northwestern High School
+path: northwestern
+---
+name: Oxon Hill High School
+path: oxon-hill
+---
+name: Pallotti High School
+path: pallotti
+---
+name: Parkdale High School
+path: parkdale
+---
+name: Potomac (Md.) High School
+path: potomac-md
+---
+name: Progressive Christian Academy
+path: progressive-christian
+---
+name: Riverdale Baptist School
+path: riverdale-baptist
+---
+name: Rock Creek Christian Academy
+path: clinton-christian
+---
+name: Suitland High School
+path: suitland
+---
+name: Surrattsville High School
+path: surrattsville
+---
+name: Tall Oaks
+path: tall-oaks
+---
+name: Wise High School
+path: wise
+---
+name: Chopticon High School
+path: chopticon
+---
+name: Great Mills High School
+path: great-mills
+---
+name: King's Christian Academy
+path: kings-christian
+---
+name: Leonardtown High School
+path: leonardtown
+---
+name: St. Mary's Ryken High School
+path: st-marys-ryken
+---
+name: O'Connell High School
+path: oconnell
+---
+name: Wakefield High School
+path: wakefield
+---
+name: Washington-Lee High School
+path: washington-lee
+---
+name: Yorktown High School
+path: yorktown
+---
+name: Bishop Ireton High School
+path: bishop-ireton
+---
+name: Episcopal High School
+path: episcopal
+---
+name: St. Stephen's/St. Agnes School
+path: st-stephens-st-agnes
+---
+name: T.C. Williams High School
+path: tc-williams
+---
+name: George Mason High School
+path: george-mason
+---
+name: State Line Homeschool Rush
+path: state-line-homeschool-rush-md
+---
+name: Osbourn High School
+path: osbourn
+---
+name: Seton School
+path: seton-va
+---
+name: Manassas Park High School
+path: manassas-park
+---
+name: Ad Fontes Academy
+path: ad-fontes
+---
+name: Annandale High School
+path: annandale
+---
+name: Centreville High School
+path: centreville
+---
+name: Chantilly High School
+path: chantilly
+---
+name: Edison High School
+path: edison
+---
+name: Fairfax Baptist Temple
+path: fairfax-baptist
+---
+name: Fairfax Christian School
+path: fairfax-christian
+---
+name: Fairfax High School
+path: fairfax
+---
+name: Fairfax Homeschool
+path: fairfax-home-school
+---
+name: Falls Church High School
+path: falls-church
+---
+name: Flint Hill School
+path: flint-hill
+---
+name: Hayfield Secondary School
+path: hayfield
+---
+name: Hearts Homeschool
+path: hearts
+---
+name: Herndon High School
+path: herndon
+---
+name: Islamic Saudi Academy
+path: islamic-saudi-academy
+---
+name: James Madison High School
+path: madison
+---
+name: Jefferson High School
+path: jefferson
+---
+name: King Abdullah Academy
+path: king-abdullah
+---
+name: Lake Braddock High School
+path: lake-braddock
+---
+name: Langley High School
+path: langley
+---
+name: Lee High School
+path: lee
+---
+name: Madeira School
+path: madeira
+---
+name: Marshall High School
+path: marshall
+---
+name: McLean High School
+path: mclean
+---
+name: Mount Vernon High School
+path: mount-vernon
+---
+name: Oakcrest School
+path: oakcrest
+---
+name: Oakton High School
+path: oakton
+---
+name: Paul VI Catholic High School
+path: paul-vi-catholic
+---
+name: Potomac School
+path: potomac-school
+---
+name: Robinson Secondary School
+path: robinson
+---
+name: South County High School
+path: south-county
+---
+name: South Lakes High School
+path: south-lakes
+---
+name: Trinity at Meadow View
+path: trinity-at-meadow-view
+---
+name: Trinity Christian
+path: trinity-christian
+---
+name: W.T. Woodson High School
+path: wt-woodson
+---
+name: West Potomac High School
+path: west-potomac
+---
+name: West Springfield High School
+path: west-springfield
+---
+name: Westfield High School
+path: westfield
+---
+name: Word of Life Christian Academy
+path: word-of-life
+---
+name: Briar Woods High School
+path: briar-woods
+---
+name: Broad Run High School
+path: broad-run
+---
+name: Champe High School
+path: champe
+---
+name: County Christian School
+path: county-christian
+---
+name: Dominion High School
+path: dominion
+---
+name: Foxcroft School
+path: foxcroft
+---
+name: Freedom-South Riding High School
+path: freedom-south-riding
+---
+name: Heritage High School
+path: heritage
+---
+name: Leesburg Christian
+path: leesburg-christian
+---
+name: Loudoun County High School
+path: loudoun-county
+---
+name: Loudoun Valley High School
+path: loudoun-valley
+---
+name: Middleburg Academy
+path: middleburg
+---
+name: Park View High School
+path: park-view
+---
+name: Potomac Falls High School
+path: potomac-falls
+---
+name: Riverside High School
+path: riverside
+---
+name: Rock Ridge High School
+path: rock-ridge
+---
+name: Stone Bridge High School
+path: stone-bridge
+---
+name: Tuscarora High School
+path: tuscarora
+---
+name: Virginia Academy
+path: virginia-academy
+---
+name: Woodgrove High School
+path: woodgrove
+---
+name: Battlefield High School
+path: battlefield
+---
+name: Brentsville District High School
+path: brentsville
+---
+name: Christ Chapel Academy
+path: christ-chapel-academy
+---
+name: Colgan
+path: colgan
+---
+name: Emmanuel Christian School
+path: emmanuel-christian
+---
+name: Evangel Christian School
+path: evangel-christian
+---
+name: Forest Park High School
+path: forest-park
+---
+name: Freedom-Woodbridge
+path: freedom-woodbridge
+---
+name: Gar-Field High School
+path: gar-field
+---
+name: Heritage Christian (Va.)
+path: heritage-christian-va
+---
+name: Hylton High School
+path: hylton
+---
+name: Impact Academy
+path: impact
+---
+name: John Paul the Great
+path: john-paul-the-great
+---
+name: Osbourn Park High School
+path: osbourn-park
+---
+name: Patriot High School
+path: patriot
+---
+name: Potomac (Va.) High School
+path: potomac-va
+---
+name: Quantico High School
+path: quantico
+---
+name: Stonewall Jackson High School
+path: stonewall-jackson
+---
+name: Woodbridge High School
+path: woodbridge

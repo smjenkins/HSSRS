@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.umuc.controllers.SchoolRankingController">
+   <children>
+      <AnchorPane layoutY="109.0" prefHeight="48.0" prefWidth="1100.0" AnchorPane.bottomAnchor="443.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="109.0">
+         <children>
+            <Button fx:id="btnHome" layoutY="9.0" mnemonicParsing="false" onAction="#processButtonClickEvents" text="Home" AnchorPane.leftAnchor="10.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="110.0" prefWidth="1100.0" style="-fx-background-color: #23a353;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutX="366.0" layoutY="20.0" prefHeight="70.0" prefWidth="368.0" text="Schools Ranking" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+               <font>
+                  <Font name="Times New Roman" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="166.0" prefHeight="375.0" prefWidth="1100.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="166.0">
+         <children>
+            <ChoiceBox fx:id="filterChoice" layoutX="416.0" layoutY="29.0" prefWidth="150.0" />
+            <Label layoutX="374.0" layoutY="31.0" prefHeight="27.0" prefWidth="42.0" text="Filter" textFill="#29288d" />
+            <ChoiceBox fx:id="yearChoice" layoutX="50.0" layoutY="29.0" prefHeight="25.0" prefWidth="83.0" />
+            <ChoiceBox fx:id="sportChoice" layoutX="202.0" layoutY="29.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="31.0" prefHeight="27.0" prefWidth="42.0" text="Year" textFill="#29288d" />
+            <Label layoutX="160.0" layoutY="31.0" prefHeight="27.0" prefWidth="42.0" text="Sport" textFill="#29288d" />
+            <Label layoutX="803.0" layoutY="1.0" prefHeight="27.0" prefWidth="121.0" text="Ranking Weights" textFill="#09092c">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="595.0" layoutY="31.0" prefHeight="27.0" prefWidth="68.0" text="Win-Loss" textFill="#29288d" />
+            <Label layoutX="716.0" layoutY="31.0" prefHeight="27.0" prefWidth="113.0" text="Opponents Wins" textFill="#29288d" />
+            <Label layoutX="885.0" layoutY="31.0" prefHeight="27.0" prefWidth="143.0" text="Avg. Point Difference" textFill="#29288d" />
+            <Label fx:id="lblWinLoss" layoutX="670.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
+            <Label fx:id="lblOppWins" layoutX="835.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
+            <Label fx:id="lblAvgPointDiff" layoutX="1036.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
+            <TableView fx:id="tbSchoolRanking" layoutY="68.0" prefHeight="301.0" prefWidth="1084.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="68.0">
+               <columns>
+                  <TableColumn fx:id="rank" prefWidth="52.0" text="Rank" />
+                  <TableColumn fx:id="schoolName" prefWidth="331.0" text="School Name" />
+                  <TableColumn fx:id="wins" prefWidth="63.0" text="Wins" />
+                  <TableColumn fx:id="losses" prefWidth="53.0" text="Losses" />
+                  <TableColumn fx:id="league" minWidth="0.0" prefWidth="108.0" text="League Name" />
+                  <TableColumn fx:id="oppWins" minWidth="0.0" prefWidth="95.0" text=" Avg. Opp. Wins" />
+                  <TableColumn fx:id="avgPointDiff" prefWidth="127.0" text="Avg. Point Diff." />
+                  <TableColumn fx:id="totalPoints" prefWidth="118.0" text="Total Points" />
+                  <TableColumn fx:id="recordIncorrect" prefWidth="131.0" text="Record Incorrect" />
+               </columns>
+            </TableView>
+
+         </children>
+      </AnchorPane>
+      <GridPane layoutY="538.0" prefHeight="63.0" prefWidth="1100.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="rankSchools" mnemonicParsing="false" onAction="#processRankSchoolsEvent" prefHeight="42.0" prefWidth="140.0" text="Rank Schools" textFill="#29288d" />
+            <Button fx:id="rankCalc" mnemonicParsing="false" onAction="#rankCalc" prefHeight="42.0" prefWidth="140.0" text="Rank Calculation" textFill="#29288d" GridPane.columnIndex="1" />
+            <Button fx:id="btnManageWeights" mnemonicParsing="false" onAction="#processButtonClickEvents" prefHeight="42.0" prefWidth="140.0" text="Manage Weights" textFill="#29288d" GridPane.columnIndex="2" />
+            <Button fx:id="btnExportCSV" layoutX="628.0" layoutY="21.0" mnemonicParsing="false" onAction="#processButtonClickEvents" prefHeight="42.0" prefWidth="140.0" text="Export to CSV" textFill="#29288d" GridPane.columnIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
