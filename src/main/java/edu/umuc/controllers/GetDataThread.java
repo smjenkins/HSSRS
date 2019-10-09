@@ -178,7 +178,7 @@ class GetDataThread implements Runnable {
                     if (recordWins != winCount || recordLosses != lossCount) {
                         school.setWinLossRecordIncorrect(true);
                     }
-                    averagePointDifference = pointsDifference / (float)gameCount;
+                    averagePointDifference = gameCount == 0 ? 0 : pointsDifference / (float)gameCount;
                     school.setAvgPointDifference(averagePointDifference);
                 }
             } catch (SocketTimeoutException | SSLHandshakeException | ConnectException e) {
