@@ -101,11 +101,21 @@ public class Controller {
      * sports yaml filename
      */
     private final static String SPORTS_YAML = "sports.yaml";
-
+    
+    /**
+     * location filter yaml filename
+     */
+    private final static String FILTER_YAML = "locationFilter.yaml";
+    
     /**
      * List of sport objects to be used by all controller objects
      */
     private List<Sport> sports = new ArrayList<>();
+    
+    /**
+     * List of location filters to be used by all controller objects
+     */
+    private List<String> filter = new ArrayList<>();
 
     /**
      * List of league objects to be used by all controller objects
@@ -210,6 +220,14 @@ public class Controller {
             loadSportsData();
             if (sports.isEmpty()) {
                 LOG.error("Sports not loaded");
+                System.exit(-1);
+            }
+        }
+        
+        if (filter.isEmpty()) {
+            loadFilterLocationData();
+            if (filter.isEmpty()){
+                LOG.error("Filter not loaded");
                 System.exit(-1);
             }
         }
@@ -401,6 +419,25 @@ public class Controller {
         }
     }
     
+    /**
+     * Loads the filter data from the location filter yaml file
+     */
+    private void loadFilterLocationData() {
+        File file = new File(configPath, FILTER_YAML);
+        try (InputStream inputStream = new FileInputStream(file)){
+            final Yaml yaml = new Yaml();
+            Iterable<Object> itrFilter = yaml.loadAll(inputStream);
+            
+            itrFilter.forEach(itr -> {
+                final Map<String, String> map = ((HashMap<String, String>) itr);
+                filter.add(map.get("name"));
+            });
+        }catch (Exception ex) {
+            LOG.error("Exception loading location filter Yaml file.", ex);
+            System.exit(-1);
+        }
+    }
+    
     public static List<League> getLeagues() {
         return leagues;
     }
@@ -411,6 +448,10 @@ public class Controller {
     
     public List<Sport> getSports() {
         return sports;
+    }
+    
+    public List<String> getLocationFilter(){
+        return filter;
     }
 
     /**

@@ -159,11 +159,7 @@ public class SchoolRankingController extends Controller implements Initializable
        
         final List<String> yearList = new ArrayList<>();
         final int startingYear = getGeneralProperties().getStartingYear();
-        final List<String> filterList = new ArrayList<>();
-        filterList.add("All");
-        filterList.add("Washington DC");
-        filterList.add("Maryland");
-        filterList.add("Virginia");
+        
         for (int year = LocalDate.now().getYear(); year >= startingYear; year--) {
             yearList.add(String.valueOf(year));
         }
@@ -183,7 +179,7 @@ public class SchoolRankingController extends Controller implements Initializable
         } else {
             yearChoice.getSelectionModel().select(yearSelected);
         }
-        filterChoice.setItems(FXCollections.observableArrayList(filterList));
+        filterChoice.setItems(FXCollections.observableArrayList(getLocationFilter()));
         League leagueSelected = Controller.getLeagueSelected();
         if (leagueSelected == null) {
             filterChoice.getSelectionModel().selectFirst();
