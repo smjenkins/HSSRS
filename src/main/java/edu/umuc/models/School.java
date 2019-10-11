@@ -7,61 +7,61 @@ import java.util.ArrayList;
  * A single school object can be reused each time a different sport or year is selected by using the initialize method.
  */
 public class School {
-    
+
     /**
      * The schools name to be displayed
      */
     private String schoolName;
-    
-    /** 
+
+    /**
      * The path used by the Washington Post website to find the school
      * example: paint-branch is the path in https://www.washingtonpost.com/allmetsports/2018-fall/paint-branch/football/
      */
     private String urlPath;
-    
-    /** 
+
+    /**
      * Stores the calculated rankPoints
      */
     private float rankPoints = 0f;
-    
+
     /**
      * Stores the number of wins for the school
      */
     private int wins = 0;
-    
-    /** 
+
+    /**
      * Stores the number of losses for the school
      */
     private int losses = 0;
-    
-    /** 
+
+    /**
      * Stores the average point difference for the school
      */
     private float avgPointDifference = 0f;
-    
-    /** 
+
+    /**
      * Stores the list of opponents for the school
      */
     private ArrayList<String> opponents = new ArrayList<>();
-    
-    /** 
+
+    /**
      * Stores the total wins from the schools opponents
      */
     private float opponentsTotalWins = 0;
-    
+
     /**
      * Flag to indicate the record on the Washington Post website does not match the total Wins and Losses found in the results
      */
     private boolean winLossRecordIncorrect = false;
     /**
-    * Average number of opponent wins
-    */
+     * Average number of opponent wins
+     */
     private float avgOpponentWins = 0f;
-    
+
     public School() {
-        
+
     }
-    
+
     public School(String schoolName, String urlPath) {
         this.schoolName = schoolName;
         this.urlPath = urlPath;
@@ -146,7 +146,7 @@ public class School {
     }
 
     public void addOpponent(String opponent) {
-            this.opponents.add(opponent);
+        this.opponents.add(opponent);
     }
 
     public boolean isWinLossRecordIncorrect() {
@@ -157,28 +157,30 @@ public class School {
         this.winLossRecordIncorrect = winLossRecordIncorrect;
     }
 
-    /** 
+    /**
      * Adds wins from an opponent to the opponent total wins count
-     * @param opponentsTotalWins 
+     *
+     * @param opponentsTotalWins
      */
     public void addOpponentWins(int opponentsTotalWins) {
         this.opponentsTotalWins += opponentsTotalWins;
     }
-    
-    public float getAvgOpponentWins(){
+
+    public float getAvgOpponentWins() {
         return avgOpponentWins;
     }
-    /**
-     * Calculates the average number of opponent wins
-     * @param opponentsTotalWins
-     * @param opponents
-     */
-    public void setAvgOpponentWins(){
-      this.avgOpponentWins = opponentsTotalWins/opponents.size();
+
+    public void setAvgOpponentWins() {
+        if (opponents == null || opponents.size() == 0) {
+            this.avgOpponentWins = 0;
+        } else {
+            this.avgOpponentWins = opponentsTotalWins / opponents.size();
+        }
     }
-    
-    /** 
+
+    /**
      * Calculates the points for the schools wins by multiplying wins by the league weight
+     *
      * @param leagueWeight
      * @return points for school wins
      */
@@ -186,17 +188,19 @@ public class School {
         return wins * leagueWeight;
     }
 
-    /** 
+    /**
      * Calculates the points for the schools losses by multiplying losses by the league weight
+     *
      * @param leagueWeight
      * @return points for school losses
      */
     public float getPointsForLosses(float leagueWeight) {
-        return (losses * (1/leagueWeight)) * -1;
+        return (losses * (1 / leagueWeight)) * -1;
     }
 
-    /** 
+    /**
      * Calculates the total points for wins and losses by calling getPointsForWins and getPointsForLosses
+     *
      * @param rankWeight
      * @param leagueWeight
      * @return total points for wins and losses
@@ -207,15 +211,17 @@ public class School {
 
     /**
      * Calculates points from opponent wins by multiplying the count of opponent wins by the rank weight for opponent wins
+     *
      * @param rankWeight
      * @return total points from opponent wins
      */
     public float getPointsFromOpponentWins(RankWeight rankWeight) {
-        return opponentsTotalWins * rankWeight.getOppWins()/opponents.size();
+        return (opponents == null || opponents.size() == 0) ? 0 : opponentsTotalWins * rankWeight.getOppWins() / opponents.size();
     }
 
-    /** 
+    /**
      * Calculates points from average point differential by multiplying the average point difference by the weight for the average opponent difference
+     *
      * @param rankWeight
      * @return total points from average point differential
      */
@@ -225,6 +231,7 @@ public class School {
 
     /**
      * Calculates the total points by using getSumOfPoints, getPointsFromOpponentWins, and getPointsFromAveragePointDifferential
+     *
      * @param rankWeight
      * @param leagueWeight
      * @return total points

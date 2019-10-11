@@ -137,20 +137,20 @@ public class RankCalculationController extends Controller implements Initializab
         
         textArea.setText("Average Opponent Wins is: Opponents Wins (" + getSelectedSchool().getOpponentsTotalWins() + 
                             ") divided by the Opponent size (" +getSelectedSchool().getOpponents().size()+") equaling " + 
-                            String.valueOf(DECIMAL_FORMAT.format(getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size())) +"\n" + 
+                            String.valueOf(DECIMAL_FORMAT.format(getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size())) +"\n" +
                          "Sum of Points is: Team wins (" + getSelectedSchool().getWins() + ") minus team losses (" + getSelectedSchool().getLosses() + 
                             ") times the Win-Loss Weight (" + getRankWeight().getWinLoss() +") equaling " + 
                             String.valueOf(DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss())) + "\n" +
-                         "Points from Opponents Wins is: Average Opponent Wins (" + DECIMAL_FORMAT.format(getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) +
+                         "Points from Opponents Wins is: Average Opponent Wins (" + DECIMAL_FORMAT.format(getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) +
                             ") times the Opponent Points Weight (" + getRankWeight().getOppWins() + ") equaling " + 
                             DECIMAL_FORMAT.format((getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) + "\n" +
                          "Points from Avg. Point Differential is: Average point difference (" + DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference()) + ") times the Avg Point Difference (" + 
                             getRankWeight().getAvgOppDifference() +") equaling "+ DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()) + "\n" +
                          "Total Points is: Sum of Points (" + DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss() )+ 
-                            ") plus the Pts from Opponents Wins (" + DECIMAL_FORMAT.format((getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
+                            ") plus the Pts from Opponents Wins (" + DECIMAL_FORMAT.format((getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
                             ") plus the Pts from Avg Point Differential (" + DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()) + ") equaling " +
                             DECIMAL_FORMAT.format((((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss()) + 
-                            ((getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
+                            (getSelectedSchool().getOpponents().size() == 0 ? 0 : (getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
                             (getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()))) + "\n\n\n\n\n\n\n\n");
     }
     
@@ -177,7 +177,7 @@ public class RankCalculationController extends Controller implements Initializab
             this.winLossWeight = new SimpleFloatProperty(rankWeight.getWinLoss());
             this.oppWinWeight = new SimpleFloatProperty(rankWeight.getOppWins());
             this.avgPointDiffWeight = new SimpleFloatProperty(rankWeight.getAvgOppDifference());
-            this.oppWins =  new SimpleStringProperty(String.valueOf(DECIMAL_FORMAT.format(school.getOpponentsTotalWins()/school.getOpponents().size())));        
+            this.oppWins =  new SimpleStringProperty(String.valueOf(DECIMAL_FORMAT.format(school.getOpponents().size() == 0 ? 0 : school.getOpponentsTotalWins()/school.getOpponents().size())));
             this.avgPointDiff = new SimpleStringProperty(DECIMAL_FORMAT.format(school.getAvgPointDifference()));
         }
 
