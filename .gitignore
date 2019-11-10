@@ -13,3 +13,6 @@
 /nbdist/
 /.nb-gradle/
 target
+
+### Misc. ###
+*.log
