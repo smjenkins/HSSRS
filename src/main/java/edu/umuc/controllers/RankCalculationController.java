@@ -1,5 +1,5 @@
 package edu.umuc.controllers;
-import static edu.umuc.controllers.Controller.DECIMAL_FORMAT;
+
 import edu.umuc.models.League;
 import edu.umuc.models.RankWeight;
 import edu.umuc.models.School;
@@ -143,7 +143,7 @@ public class RankCalculationController extends Controller implements Initializab
                             String.valueOf(DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss())) + "\n" +
                          "Points from Opponents Wins is: Average Opponent Wins (" + DECIMAL_FORMAT.format(getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) +
                             ") times the Opponent Points Weight (" + getRankWeight().getOppWins() + ") equaling " + 
-                            DECIMAL_FORMAT.format((getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) + "\n" +
+                            DECIMAL_FORMAT.format((getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) + "\n" +
                          "Points from Avg. Point Differential is: Average point difference (" + DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference()) + ") times the Avg Point Difference (" + 
                             getRankWeight().getAvgOppDifference() +") equaling "+ DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()) + "\n" +
                          "Total Points is: Sum of Points (" + DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss() )+ 
