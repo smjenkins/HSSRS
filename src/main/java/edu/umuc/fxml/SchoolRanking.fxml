@@ -40,12 +40,46 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="595.0" layoutY="31.0" prefHeight="27.0" prefWidth="68.0" text="Win-Loss" textFill="#29288d" />
-            <Label layoutX="716.0" layoutY="31.0" prefHeight="27.0" prefWidth="113.0" text="Opponents Wins" textFill="#29288d" />
-            <Label layoutX="885.0" layoutY="31.0" prefHeight="27.0" prefWidth="143.0" text="Avg. Point Difference" textFill="#29288d" />
-            <Label fx:id="lblWinLoss" layoutX="670.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
-            <Label fx:id="lblOppWins" layoutX="835.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
-            <Label fx:id="lblAvgPointDiff" layoutX="1036.0" layoutY="31.0" prefHeight="27.0" prefWidth="35.0" text="0.00" textFill="#29288d" />
+            <Label layoutX="595.0" layoutY="20.0" prefHeight="27.0" text="Previous Season" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="14.0"/>
+               </font>
+            </Label>
+            <Label layoutX="715.0" layoutY="20.0" prefHeight="27.0" text="Win-Loss" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="14.0"/>
+               </font>
+            </Label>
+            <Label layoutX="805.0" layoutY="20.0" prefHeight="27.0" text="Opponents Wins" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="14.0"/>
+               </font>
+            </Label>
+            <Label layoutX="925.0" layoutY="20.0" prefHeight="27.0" text="Avg. Point Difference" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="14.0"/>
+               </font>
+            </Label>
+            <Label fx:id="lblPreviousSeason" layoutX="595.0" layoutY="35" prefHeight="27.0" text="0.00" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="lblWinLoss" layoutX="715.0" layoutY="35.0" prefHeight="27.0" text="0.00" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="lblOppWins" layoutX="805.0" layoutY="35.0" prefHeight="27.0" text="0.00" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="12.0"/>
+               </font>
+            </Label>
+            <Label fx:id="lblAvgPointDiff" layoutX="925.0" layoutY="35" prefHeight="27.0" text="0.00" textFill="#29288d">
+               <font>
+                  <Font name="Arial" size="12.0"/>
+               </font>
+            </Label>
             <TableView fx:id="tbSchoolRanking" layoutY="68.0" prefHeight="301.0" prefWidth="1084.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="68.0">
                <columns>
                   <TableColumn fx:id="rank" prefWidth="52.0" text="Rank" />

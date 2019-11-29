@@ -105,6 +105,9 @@ public class SchoolRankingController extends Controller implements Initializable
     @FXML
     private Label lblAvgPointDiff;
 
+    @FXML
+    private Label lblPreviousSeason;
+
     private String savedYearChoice;
 
     private Sport savedSportChoice;
@@ -203,6 +206,7 @@ public class SchoolRankingController extends Controller implements Initializable
         lblWinLoss.setText(decimalFormat.format(rankWeight.getWinLoss()));
         lblOppWins.setText(decimalFormat.format(rankWeight.getOppWins()));
         lblAvgPointDiff.setText(decimalFormat.format(rankWeight.getAvgOppDifference()));
+        lblPreviousSeason.setText(decimalFormat.format(rankWeight.getLastSeasonPercentWeight()));
     }
 
     /**
@@ -274,6 +278,7 @@ public class SchoolRankingController extends Controller implements Initializable
                      * selections
                      */
                     final ScrapeData scrapeData = new ScrapeData();
+                    final List<School> previousYearSchools = scrapeData.scrapeData(String.valueOf(Integer.parseInt(getYearSelected())-1), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
                     final List<School> schools = scrapeData.scrapeData(getYearSelected(), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
 
                     /**
