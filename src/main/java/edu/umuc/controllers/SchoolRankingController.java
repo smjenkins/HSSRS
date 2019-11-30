@@ -115,7 +115,7 @@ public class SchoolRankingController extends Controller implements Initializable
     @FXML
     public ChoiceBox<String> filterChoice;
     
-               @FXML
+    @FXML
     private Button btnExportCSV;
 
     /**
@@ -216,9 +216,6 @@ public class SchoolRankingController extends Controller implements Initializable
      */
     @FXML
     private void processRankSchoolsEvent(ActionEvent event) {
-
-
-
         if (savedYearChoice == yearChoice.getValue()
                 && savedSportChoice == sportChoice.getValue()) {
             return;
@@ -235,7 +232,8 @@ public class SchoolRankingController extends Controller implements Initializable
 
         final RankWeight rankWeight = new RankWeight(Float.parseFloat(lblWinLoss.getText()),
                 Float.parseFloat(lblOppWins.getText()),
-                Float.parseFloat(lblAvgPointDiff.getText()));
+                Float.parseFloat(lblAvgPointDiff.getText()),
+                Float.parseFloat(lblPreviousSeason.getText()));
 
         final Sport sportSelected = getSports().stream()
                 .filter(sportItem -> getSportSelected().getName().equals(sportItem.getName()))
@@ -278,8 +276,22 @@ public class SchoolRankingController extends Controller implements Initializable
                      * selections
                      */
                     final ScrapeData scrapeData = new ScrapeData();
-                    final List<School> previousYearSchools = scrapeData.scrapeData(String.valueOf(Integer.parseInt(getYearSelected())-1), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
+                    List<School> previousYearSchools = null;
+                    if(rankWeight.getLastSeasonPercentWeight() > 0){
+                        previousYearSchools = scrapeData.scrapeData(String.valueOf(Integer.parseInt(getYearSelected()) - 1), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
+                    }
+
                     final List<School> schools = scrapeData.scrapeData(getYearSelected(), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
+
+                    if(previousYearSchools != null){
+                        for(School school : schools){
+                            for(School previousSchool : previousYearSchools){
+                                if(school.getSchoolName().equals(previousSchool.getSchoolName())){
+                                    school.setPreviousYearPoints(previousSchool.getTotalPoints(rankWeight,getLeagueWeightForSchool(school.getSchoolName())));
+                                }
+                            }
+                        }
+                    }
 
                     /**
                      * Flag used to determine if schools have been ranked
@@ -316,12 +328,7 @@ public class SchoolRankingController extends Controller implements Initializable
         Thread thTask = new Thread(task);
         thTask.start();
         savedYearChoice = yearChoice.getValue();
-        savedSportChoice = sportChoice.getValue();
-
-
-   
-          
-    }
+        savedSportChoice = sportChoice.getValue();}
 
     private void populateTable(List<School> schools) {
         rankedSchools.clear();
