@@ -28,7 +28,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static java.util.Collections.list;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
@@ -277,19 +280,22 @@ public class SchoolRankingController extends Controller implements Initializable
                      */
                     final ScrapeData scrapeData = new ScrapeData();
                     List<School> previousYearSchools = null;
+                    Map<String,School> previousYearSchoolMap = new HashMap<>();
                     if(rankWeight.getLastSeasonPercentWeight() > 0){
                         previousYearSchools = scrapeData.scrapeData(String.valueOf(Integer.parseInt(getYearSelected()) - 1), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
                     }
 
                     final List<School> schools = scrapeData.scrapeData(getYearSelected(), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
 
-                    if(previousYearSchools != null){
-                        for(School school : schools){
-                            for(School previousSchool : previousYearSchools){
-                                if(school.getSchoolName().equals(previousSchool.getSchoolName())){
-                                    school.setPreviousYearPoints(previousSchool.getTotalPoints(rankWeight,getLeagueWeightForSchool(school.getSchoolName())));
-                                }
-                            }
+                    if(previousYearSchools != null) {
+                        for(School school : previousYearSchools) {
+                            previousYearSchoolMap.putIfAbsent(school.getSchoolName(), school);
+                        }
+                    }
+
+                    for(School school : schools){
+                        if(previousYearSchoolMap.get(school.getSchoolName()) != null){
+                            school.setPreviousYearPoints(previousYearSchoolMap.get(school.getSchoolName()).getTotalPoints(rankWeight,getLeagueWeightForSchool(school.getSchoolName())));
                         }
                     }
 

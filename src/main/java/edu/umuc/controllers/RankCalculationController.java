@@ -149,19 +149,19 @@ public class RankCalculationController extends Controller implements Initializab
         float averagePointDifferenceWeight = getRankWeight().getAvgOppDifference();
         float lastSeasonPercentWeight = getRankWeight().getLastSeasonPercentWeight();
         float previousYearPoints = getSelectedSchool().getPreviousYearPoints();
-        float valAverageOpponentWins = opponentSize == 0 ? 0 : opponentTotalWins / opponentSize;
+        float averageOpponentWins = opponentSize == 0 ? 0 : opponentTotalWins / opponentSize;
         float valPoints = (wins - losses) * winLossWeight;
         float valPointsOpponentWins = opponentSize == 0 ? 0 : (opponentTotalWins / opponentSize) * opponentWinWeight;
         float valDifferential = averagePointDifference * averagePointDifferenceWeight;
         float valLastSeason = lastSeasonPercentWeight == 0 ? 0 : previousYearPoints * lastSeasonPercentWeight;
-        float valTotal = valAverageOpponentWins + valPoints + valPointsOpponentWins + valDifferential + valLastSeason;
+        float valTotal = valPoints + valPointsOpponentWins + valDifferential + valLastSeason;
 
-        textArea.setText("Average Opponent Wins: Opponents Wins (" + opponentTotalWins + ") " + " divided by the Opponent size (" + opponentSize + ") equaling " + DECIMAL_FORMAT.format(valAverageOpponentWins) + "\n" +
+        textArea.setText("Average Opponent Wins: Opponents Wins (" + opponentTotalWins + ") " + " divided by the Opponent size (" + opponentSize + ") equaling " + DECIMAL_FORMAT.format(averageOpponentWins) + "\n" +
                 "Sum of Points: Team wins (" + wins + ") minus team losses (" + losses + ") times the Win-Loss Weight (" + winLossWeight + ") " + " equaling " + DECIMAL_FORMAT.format(valPoints) + "\n" +
                 "Points from Opponents Wins: Average Opponent Wins (" + DECIMAL_FORMAT.format(opponentSize == 0 ? 0 : opponentTotalWins / opponentSize) + ") times the Opponent Points Weight (" + opponentWinWeight + ") equaling " + DECIMAL_FORMAT.format(valPointsOpponentWins) + "\n" +
                 "Points from Average Point Differential: Average point difference (" + DECIMAL_FORMAT.format(averagePointDifference) + ") times the Avg Point Difference (" + averagePointDifferenceWeight + ") equaling " + DECIMAL_FORMAT.format(valDifferential) + "\n" +
                 (lastSeasonPercentWeight > 0 ? "Points from Last Season: Total Points (" + DECIMAL_FORMAT.format(previousYearPoints) + ") times Last Season Weight (" + DECIMAL_FORMAT.format(lastSeasonPercentWeight) + ") equaling  " + DECIMAL_FORMAT.format(valLastSeason) + "\n" : "") +
-                "Total Points: " + DECIMAL_FORMAT.format(valAverageOpponentWins) + " + " + DECIMAL_FORMAT.format(valPoints) + " + " + DECIMAL_FORMAT.format(valPointsOpponentWins) + " + " + DECIMAL_FORMAT.format(valDifferential) + " + " + (lastSeasonPercentWeight > 0 ? DECIMAL_FORMAT.format(valLastSeason) : "") + " = " + DECIMAL_FORMAT.format(valTotal) + "\n\n\n\n\n\n\n\n");
+                "Total Points: " + DECIMAL_FORMAT.format(valPoints) + " + " + DECIMAL_FORMAT.format(valPointsOpponentWins) + " + " + DECIMAL_FORMAT.format(valDifferential) + (lastSeasonPercentWeight > 0 ? " + " + DECIMAL_FORMAT.format(valLastSeason) : "") + " = " + DECIMAL_FORMAT.format(valTotal) + "\n\n\n\n\n\n\n\n");
     }
 
     /**
