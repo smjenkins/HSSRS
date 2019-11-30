@@ -85,8 +85,6 @@ class GetDataThread implements Runnable {
                  */
                 String url = "https://www.washingtonpost.com/allmetsports/" + year + "-" + season + "/" + school.getUrlPath() + "/" + sport + "/";
 
-                System.out.println("URL!!! - " + url);
-
                 /**
                  * Get the data within the specified timeout period
                  */
