@@ -34,6 +34,9 @@ public class ManageWeightsController extends Controller implements Initializable
     @FXML
     private TextField avgPtsDiffWeight;
 
+    @FXML
+    private TextField lastSeasonPercentCalc;
+
     /**
      * Default Constructor
      */
@@ -53,6 +56,7 @@ public class ManageWeightsController extends Controller implements Initializable
         winLossWeight.setText(DECIMAL_FORMAT.format(rankWeight.getWinLoss()));
         oppWinsWeight.setText(DECIMAL_FORMAT.format(rankWeight.getOppWins()));
         avgPtsDiffWeight.setText(DECIMAL_FORMAT.format(rankWeight.getAvgOppDifference()));
+        lastSeasonPercentCalc.setText(DECIMAL_FORMAT.format(rankWeight.getLastSeasonPercentWeight()));
     }
 
     /**
@@ -68,7 +72,8 @@ public class ManageWeightsController extends Controller implements Initializable
                 final Float winLoss = Float.parseFloat(winLossWeight.getText());
                 final Float oppWins = Float.parseFloat(oppWinsWeight.getText());
                 final Float avgOppDifference = Float.parseFloat(avgPtsDiffWeight.getText());
-                final RankWeight savedRankWeight = new RankWeight(winLoss, oppWins, avgOppDifference);
+                final Float lastSeason = Float.parseFloat(lastSeasonPercentCalc.getText());
+                final RankWeight savedRankWeight = new RankWeight(winLoss, oppWins, avgOppDifference, lastSeason);
                 setRankWeight(savedRankWeight);
 
                 /**
@@ -80,6 +85,7 @@ public class ManageWeightsController extends Controller implements Initializable
                 winLossWeight.setText(DECIMAL_FORMAT.format(savedRankWeight.getWinLoss()));
                 oppWinsWeight.setText(DECIMAL_FORMAT.format(savedRankWeight.getOppWins()));
                 avgPtsDiffWeight.setText(DECIMAL_FORMAT.format(savedRankWeight.getAvgOppDifference()));
+                lastSeasonPercentCalc.setText(DECIMAL_FORMAT.format(savedRankWeight.getLastSeasonPercentWeight()));
 
             } catch (NumberFormatException e){
                 /**
@@ -106,6 +112,7 @@ public class ManageWeightsController extends Controller implements Initializable
             winLossWeight.setText(DECIMAL_FORMAT.format(rankWeight.getWinLoss()));
             oppWinsWeight.setText(DECIMAL_FORMAT.format(rankWeight.getOppWins()));
             avgPtsDiffWeight.setText(DECIMAL_FORMAT.format(rankWeight.getAvgOppDifference()));
+            lastSeasonPercentCalc.setText(DECIMAL_FORMAT.format(rankWeight.getLastSeasonPercentWeight()));
 
             /**
              * "Autosave" default values on reset

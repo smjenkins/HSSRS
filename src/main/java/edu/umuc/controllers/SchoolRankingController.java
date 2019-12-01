@@ -28,7 +28,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static java.util.Collections.list;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
@@ -105,6 +108,9 @@ public class SchoolRankingController extends Controller implements Initializable
     @FXML
     private Label lblAvgPointDiff;
 
+    @FXML
+    private Label lblPreviousSeason;
+
     private String savedYearChoice;
 
     private Sport savedSportChoice;
@@ -112,7 +118,7 @@ public class SchoolRankingController extends Controller implements Initializable
     @FXML
     public ChoiceBox<String> filterChoice;
     
-               @FXML
+    @FXML
     private Button btnExportCSV;
 
     /**
@@ -203,6 +209,7 @@ public class SchoolRankingController extends Controller implements Initializable
         lblWinLoss.setText(decimalFormat.format(rankWeight.getWinLoss()));
         lblOppWins.setText(decimalFormat.format(rankWeight.getOppWins()));
         lblAvgPointDiff.setText(decimalFormat.format(rankWeight.getAvgOppDifference()));
+        lblPreviousSeason.setText(decimalFormat.format(rankWeight.getLastSeasonPercentWeight()));
     }
 
     /**
@@ -212,9 +219,6 @@ public class SchoolRankingController extends Controller implements Initializable
      */
     @FXML
     private void processRankSchoolsEvent(ActionEvent event) {
-
-
-
         if (savedYearChoice == yearChoice.getValue()
                 && savedSportChoice == sportChoice.getValue()) {
             return;
@@ -231,7 +235,8 @@ public class SchoolRankingController extends Controller implements Initializable
 
         final RankWeight rankWeight = new RankWeight(Float.parseFloat(lblWinLoss.getText()),
                 Float.parseFloat(lblOppWins.getText()),
-                Float.parseFloat(lblAvgPointDiff.getText()));
+                Float.parseFloat(lblAvgPointDiff.getText()),
+                Float.parseFloat(lblPreviousSeason.getText()));
 
         final Sport sportSelected = getSports().stream()
                 .filter(sportItem -> getSportSelected().getName().equals(sportItem.getName()))
@@ -274,7 +279,25 @@ public class SchoolRankingController extends Controller implements Initializable
                      * selections
                      */
                     final ScrapeData scrapeData = new ScrapeData();
+                    List<School> previousYearSchools = null;
+                    Map<String,School> previousYearSchoolMap = new HashMap<>();
+                    if(rankWeight.getLastSeasonPercentWeight() > 0){
+                        previousYearSchools = scrapeData.scrapeData(String.valueOf(Integer.parseInt(getYearSelected()) - 1), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
+                    }
+
                     final List<School> schools = scrapeData.scrapeData(getYearSelected(), sportSelected.getSeason(), sportSelected.getPath(), rankWeight);
+
+                    if(previousYearSchools != null) {
+                        for(School school : previousYearSchools) {
+                            previousYearSchoolMap.putIfAbsent(school.getSchoolName(), school);
+                        }
+                    }
+
+                    for(School school : schools){
+                        if(previousYearSchoolMap.get(school.getSchoolName()) != null){
+                            school.setPreviousYearPoints(previousYearSchoolMap.get(school.getSchoolName()).getTotalPoints(rankWeight,getLeagueWeightForSchool(school.getSchoolName())));
+                        }
+                    }
 
                     /**
                      * Flag used to determine if schools have been ranked
@@ -311,12 +334,7 @@ public class SchoolRankingController extends Controller implements Initializable
         Thread thTask = new Thread(task);
         thTask.start();
         savedYearChoice = yearChoice.getValue();
-        savedSportChoice = sportChoice.getValue();
-
-
-   
-          
-    }
+        savedSportChoice = sportChoice.getValue();}
 
     private void populateTable(List<School> schools) {
         rankedSchools.clear();

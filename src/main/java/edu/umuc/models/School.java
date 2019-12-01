@@ -58,6 +58,8 @@ public class School {
      */
     private float avgOpponentWins = 0f;
 
+    private float previousYearPoints = 0f;
+
     public School() {
 
     }
@@ -237,7 +239,15 @@ public class School {
      * @return total points
      */
     public float getTotalPoints(RankWeight rankWeight, float leagueWeight) {
-        rankPoints = getSumOfPoints(rankWeight, leagueWeight) + getPointsFromOpponentWins(rankWeight) + getPointsFromAveragePointDifferential(rankWeight);
+        rankPoints = (getPreviousYearPoints() * rankWeight.getLastSeasonPercentWeight()) + getSumOfPoints(rankWeight, leagueWeight) + getPointsFromOpponentWins(rankWeight) + getPointsFromAveragePointDifferential(rankWeight);
         return rankPoints;
+    }
+
+    public float getPreviousYearPoints() {
+        return previousYearPoints;
+    }
+
+    public void setPreviousYearPoints(float previousYearPoints) {
+        this.previousYearPoints = previousYearPoints;
     }
 }

@@ -3,8 +3,10 @@ package edu.umuc.controllers;
 import edu.umuc.models.League;
 import edu.umuc.models.RankWeight;
 import edu.umuc.models.School;
+
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -23,7 +25,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
  */
 public class RankCalculationController extends Controller implements Initializable {
 
-    /** 
+    /**
      * The School Results TableView and associated columns
      */
     @FXML
@@ -56,7 +58,7 @@ public class RankCalculationController extends Controller implements Initializab
     @FXML
     private TableColumn<RankCalculationController.FXResultsTable, String> avgPointDifferential;
 
-    /** 
+    /**
      * The Calculation TableView and associated columns
      */
     @FXML
@@ -76,10 +78,10 @@ public class RankCalculationController extends Controller implements Initializab
 
     @FXML
     private TableColumn<RankCalculationController.FXCalculationTable, String> pointsFromAvgOppDiff;
-    
+
     @FXML
     private TableColumn<RankCalculationController.FXCalculationTable, String> totalPoints;
-    
+
     @FXML
     private Label textArea;
 
@@ -91,17 +93,18 @@ public class RankCalculationController extends Controller implements Initializab
 
     @FXML
     private Label lblSchoolName;
- 
-    /** 
+
+    /**
      * Default constructor
      */
     public RankCalculationController() {
     }
-    
+
     /**
      * Sets up the tables and populates the data
+     *
      * @param location
-     * @param resources 
+     * @param resources
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -114,17 +117,17 @@ public class RankCalculationController extends Controller implements Initializab
         weightAvgPointsScored.setCellValueFactory(new PropertyValueFactory<>("avgPointDiffWeight"));
         oppWins.setCellValueFactory(new PropertyValueFactory<>("oppWins"));
         avgPointDifferential.setCellValueFactory(new PropertyValueFactory<>("avgPointDiff"));
-        
+
         pointsForWin.setCellValueFactory(new PropertyValueFactory<>("pointsForWins"));
         pointsForLosses.setCellValueFactory(new PropertyValueFactory<>("pointsForLosses"));
         sumOfPoints.setCellValueFactory(new PropertyValueFactory<>("sumOfPoints"));
         pointsFromOppWins.setCellValueFactory(new PropertyValueFactory<>("pointsFromOpponentWins"));
         pointsFromAvgOppDiff.setCellValueFactory(new PropertyValueFactory<>("pointsFromAveragePointDiff"));
         totalPoints.setCellValueFactory(new PropertyValueFactory<>("totalPoints"));
-        
+
         final ObservableList<RankCalculationController.FXResultsTable> result = FXCollections.observableArrayList();
         final ObservableList<RankCalculationController.FXCalculationTable> calculation = FXCollections.observableArrayList();
-        
+
         if (getSelectedSchool() != null) {
             lblSchoolName.setText(getSelectedSchool().getSchoolName() + " Results");
             result.add(new FXResultsTable(getSelectedLeague(), getSelectedSchool(), getRankWeight()));
@@ -134,27 +137,34 @@ public class RankCalculationController extends Controller implements Initializab
         }
         tbSchoolResults.setItems(result);
         tbCalculation.setItems(calculation);
-        
-        textArea.setText("Average Opponent Wins is: Opponents Wins (" + getSelectedSchool().getOpponentsTotalWins() + 
-                            ") divided by the Opponent size (" +getSelectedSchool().getOpponents().size()+") equaling " + 
-                            String.valueOf(DECIMAL_FORMAT.format(getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size())) +"\n" +
-                         "Sum of Points is: Team wins (" + getSelectedSchool().getWins() + ") minus team losses (" + getSelectedSchool().getLosses() + 
-                            ") times the Win-Loss Weight (" + getRankWeight().getWinLoss() +") equaling " + 
-                            String.valueOf(DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss())) + "\n" +
-                         "Points from Opponents Wins is: Average Opponent Wins (" + DECIMAL_FORMAT.format(getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) +
-                            ") times the Opponent Points Weight (" + getRankWeight().getOppWins() + ") equaling " + 
-                            DECIMAL_FORMAT.format((getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) + "\n" +
-                         "Points from Avg. Point Differential is: Average point difference (" + DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference()) + ") times the Avg Point Difference (" + 
-                            getRankWeight().getAvgOppDifference() +") equaling "+ DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()) + "\n" +
-                         "Total Points is: Sum of Points (" + DECIMAL_FORMAT.format((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss() )+ 
-                            ") plus the Pts from Opponents Wins (" + DECIMAL_FORMAT.format((getSelectedSchool().getOpponents().size() == 0 ? 0 : getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
-                            ") plus the Pts from Avg Point Differential (" + DECIMAL_FORMAT.format(getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()) + ") equaling " +
-                            DECIMAL_FORMAT.format((((getSelectedSchool().getWins() - getSelectedSchool().getLosses()) * getRankWeight().getWinLoss()) + 
-                            (getSelectedSchool().getOpponents().size() == 0 ? 0 : (getSelectedSchool().getOpponentsTotalWins() /getSelectedSchool().getOpponents().size()) * getRankWeight().getOppWins()) +
-                            (getSelectedSchool().getAvgPointDifference() * getRankWeight().getAvgOppDifference()))) + "\n\n\n\n\n\n\n\n");
+
+        //Added for readability
+        float opponentTotalWins = getSelectedSchool().getOpponentsTotalWins();
+        float opponentSize = getSelectedSchool().getOpponents().size();
+        float wins = getSelectedSchool().getWins();
+        float losses = getSelectedSchool().getLosses();
+        float winLossWeight = getRankWeight().getWinLoss();
+        float opponentWinWeight = getRankWeight().getOppWins();
+        float averagePointDifference = getSelectedSchool().getAvgPointDifference();
+        float averagePointDifferenceWeight = getRankWeight().getAvgOppDifference();
+        float lastSeasonPercentWeight = getRankWeight().getLastSeasonPercentWeight();
+        float previousYearPoints = getSelectedSchool().getPreviousYearPoints();
+        float averageOpponentWins = opponentSize == 0 ? 0 : opponentTotalWins / opponentSize;
+        float valPoints = (wins - losses) * winLossWeight;
+        float valPointsOpponentWins = opponentSize == 0 ? 0 : (opponentTotalWins / opponentSize) * opponentWinWeight;
+        float valDifferential = averagePointDifference * averagePointDifferenceWeight;
+        float valLastSeason = lastSeasonPercentWeight == 0 ? 0 : previousYearPoints * lastSeasonPercentWeight;
+        float valTotal = valPoints + valPointsOpponentWins + valDifferential + valLastSeason;
+
+        textArea.setText("Average Opponent Wins: Opponents Wins (" + opponentTotalWins + ") " + " divided by the Opponent size (" + opponentSize + ") equaling " + DECIMAL_FORMAT.format(averageOpponentWins) + "\n" +
+                "Sum of Points: Team wins (" + wins + ") minus team losses (" + losses + ") times the Win-Loss Weight (" + winLossWeight + ") " + " equaling " + DECIMAL_FORMAT.format(valPoints) + "\n" +
+                "Points from Opponents Wins: Average Opponent Wins (" + DECIMAL_FORMAT.format(opponentSize == 0 ? 0 : opponentTotalWins / opponentSize) + ") times the Opponent Points Weight (" + opponentWinWeight + ") equaling " + DECIMAL_FORMAT.format(valPointsOpponentWins) + "\n" +
+                "Points from Average Point Differential: Average point difference (" + DECIMAL_FORMAT.format(averagePointDifference) + ") times the Avg Point Difference (" + averagePointDifferenceWeight + ") equaling " + DECIMAL_FORMAT.format(valDifferential) + "\n" +
+                (lastSeasonPercentWeight > 0 ? "Points from Last Season: Total Points (" + DECIMAL_FORMAT.format(previousYearPoints) + ") times Last Season Weight (" + DECIMAL_FORMAT.format(lastSeasonPercentWeight) + ") equaling  " + DECIMAL_FORMAT.format(valLastSeason) + "\n" : "") +
+                "Total Points: " + DECIMAL_FORMAT.format(valPoints) + " + " + DECIMAL_FORMAT.format(valPointsOpponentWins) + " + " + DECIMAL_FORMAT.format(valDifferential) + (lastSeasonPercentWeight > 0 ? " + " + DECIMAL_FORMAT.format(valLastSeason) : "") + " = " + DECIMAL_FORMAT.format(valTotal) + "\n\n\n\n\n\n\n\n");
     }
-    
-    /** 
+
+    /**
      * Class created for the Results table
      */
     public class FXResultsTable {
@@ -168,7 +178,7 @@ public class RankCalculationController extends Controller implements Initializab
         private final SimpleStringProperty oppWins;
         private final SimpleStringProperty avgPointDiff;
 
-        
+
         private FXResultsTable(League league, School school, RankWeight rankWeight) {
             this.wins = new SimpleIntegerProperty(school.getWins());
             this.losses = new SimpleIntegerProperty(school.getLosses());
@@ -177,7 +187,7 @@ public class RankCalculationController extends Controller implements Initializab
             this.winLossWeight = new SimpleFloatProperty(rankWeight.getWinLoss());
             this.oppWinWeight = new SimpleFloatProperty(rankWeight.getOppWins());
             this.avgPointDiffWeight = new SimpleFloatProperty(rankWeight.getAvgOppDifference());
-            this.oppWins =  new SimpleStringProperty(String.valueOf(DECIMAL_FORMAT.format(school.getOpponents().size() == 0 ? 0 : school.getOpponentsTotalWins()/school.getOpponents().size())));
+            this.oppWins = new SimpleStringProperty(String.valueOf(DECIMAL_FORMAT.format(school.getOpponents().size() == 0 ? 0 : school.getOpponentsTotalWins() / school.getOpponents().size())));
             this.avgPointDiff = new SimpleStringProperty(DECIMAL_FORMAT.format(school.getAvgPointDifference()));
         }
 
@@ -216,7 +226,7 @@ public class RankCalculationController extends Controller implements Initializab
         public SimpleStringProperty avgPointDiffProperty() {
             return avgPointDiff;
         }
-        
+
         public int getWins() {
             return wins.get();
         }
@@ -255,9 +265,9 @@ public class RankCalculationController extends Controller implements Initializab
 
     }
 
-    /** 
+    /**
      * Class created for the Calculation table
-     */    
+     */
     public class FXCalculationTable {
         private final SimpleStringProperty pointsForWins;
         private final SimpleStringProperty pointsForLosses;
@@ -265,7 +275,7 @@ public class RankCalculationController extends Controller implements Initializab
         private final SimpleStringProperty pointsFromOpponentWins;
         private final SimpleStringProperty pointsFromAveragePointDiff;
         private final SimpleStringProperty totalPoints;
-        
+
         private FXCalculationTable(League league, School school, RankWeight rankWeight) {
             this.pointsForWins = new SimpleStringProperty(DECIMAL_FORMAT.format(school.getPointsForWins(league.getWeight())));
             this.pointsForLosses = new SimpleStringProperty(DECIMAL_FORMAT.format(school.getPointsForLosses(league.getWeight())));
@@ -281,15 +291,15 @@ public class RankCalculationController extends Controller implements Initializab
 
         public String getPointsForWins() {
             return pointsForWins.get();
-        }        
-        
+        }
+
         public SimpleStringProperty pointsForLossesProperty() {
             return pointsForLosses;
         }
 
         public String getPointsForLosses() {
             return pointsForLosses.get();
-        } 
+        }
 
         public SimpleStringProperty sumOfPointsProperty() {
             return sumOfPoints;
@@ -297,7 +307,7 @@ public class RankCalculationController extends Controller implements Initializab
 
         public String getSumOfPoints() {
             return sumOfPoints.get();
-        } 
+        }
 
         public SimpleStringProperty pointsFromOpponentWinsProperty() {
             return pointsFromOpponentWins;
@@ -305,7 +315,7 @@ public class RankCalculationController extends Controller implements Initializab
 
         public String getPointsFromOpponentWins() {
             return pointsFromOpponentWins.get();
-        } 
+        }
 
         public SimpleStringProperty pointsFromAveragePointDiffProperty() {
             return pointsFromAveragePointDiff;
@@ -313,7 +323,7 @@ public class RankCalculationController extends Controller implements Initializab
 
         public String getPointsFromAveragePointDiff() {
             return pointsFromAveragePointDiff.get();
-        } 
+        }
 
         public SimpleStringProperty totalPointsProperty() {
             return totalPoints;
