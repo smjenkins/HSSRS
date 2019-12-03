@@ -54,7 +54,7 @@ public class SportsRankingApp extends Application {
         final FXMLLoader fxmlLoader = new FXMLLoader();
         final Parent homePage = fxmlLoader.load(getClass().getResourceAsStream(HOME_PAGE_FXML));
         primaryStage.setScene(new Scene(homePage, DEFAULT_SCENE_WIDTH, DEFAULT_SCENE_HEIGHT));
-                primaryStage.setTitle("High School Sports Ranking System (HSSRS) Version 2.0");
+                primaryStage.setTitle("High School Sports Ranking System (HSSRS) Version 3.0");
         Image icon = new Image("/icons/wpost-icon.png");
         primaryStage.getIcons().add(icon);
         primaryStage.show();
